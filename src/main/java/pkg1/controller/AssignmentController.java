@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import pkg1.dto.AssignmentDTO;
 import pkg1.service.AssignmentService;
 
-import javax.validation.Valid;
+import jakarta.validation.Valid;
 import java.util.List;
 
 @RestController

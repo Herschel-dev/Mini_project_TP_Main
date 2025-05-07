@@ -8,4 +8,5 @@ import java.util.List;
 
 public interface AttendanceRepository extends JpaRepository<Attendance, Long> {
     List<Attendance> findByTeacherIdAndDate(Long teacherId, LocalDate date);
+    List<Attendance> findByCourse(String course);
 }

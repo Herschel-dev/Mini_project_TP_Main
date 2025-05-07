@@ -1,7 +1,7 @@
 // AttendanceDTO.java
 package pkg1.dto;
 
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotNull;
 import java.time.LocalDate;
 
 public class AttendanceDTO {

@@ -1,8 +1,8 @@
 // TeacherDTO.java
 package pkg1.dto;
 
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotNull;
 
 public class TeacherDTO {
     private Long id;

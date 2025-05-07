@@ -7,7 +7,7 @@ import pkg1.dto.TeacherDTO;
 import pkg1.model.Teacher;
 import pkg1.repository.TeacherRepository;
 
-import java.util.Optional;
+import java.util.Optional;  //Never used for now
 
 @Service
 public class TeacherService {
@@ -31,5 +31,14 @@ public class TeacherService {
         return mapper.map(teacher, TeacherDTO.class);
     }
 
-    // add update, delete as needed...
+    public TeacherDTO updateTeacher(TeacherDTO dto) {
+        Teacher entity = mapper.map(dto, Teacher.class);
+        Teacher updated = teacherRepo.save(entity);
+        return mapper.map(updated, TeacherDTO.class);
+    }
+
+    public void deleteTeacher(Long id) {
+        teacherRepo.deleteById(id);
+    }
+
 }

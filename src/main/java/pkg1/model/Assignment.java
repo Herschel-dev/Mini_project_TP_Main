@@ -25,5 +25,14 @@ public class Assignment {
     @JoinColumn(name = "teacher_id")
     private Teacher teacher;
 
-    // getters and setters
+    private String feedback;
+    private Integer score;
+
+    // then generate getters/setters:
+
+    public String getFeedback() { return feedback; }
+    public void setFeedback(String feedback) { this.feedback = feedback; }
+
+    public Integer getScore() { return score; }
+    public void setScore(Integer score) { this.score = score; }
 }

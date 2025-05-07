@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import pkg1.dto.TeacherDTO;
 import pkg1.service.TeacherService;
 
-import javax.validation.Valid;
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/api/teachers")
