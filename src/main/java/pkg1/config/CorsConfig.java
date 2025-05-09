@@ -1,6 +1,3 @@
-// Panel: Config (src/main/java/pkg1/config)
-
-// CorsConfig.java
 package pkg1.config;
 
 import org.springframework.context.annotation.Bean;

@@ -1,4 +1,4 @@
-// TeacherDTO.java
+// pkg1.dto.TeacherDTO.java
 package pkg1.dto;
 
 import jakarta.validation.constraints.Email;
@@ -14,7 +14,10 @@ public class TeacherDTO {
     @NotNull
     private String email;
 
-    // getters & setters
+    @NotNull
+    private String password;
+
+    // Getters & Setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 
@@ -23,4 +26,7 @@ public class TeacherDTO {
 
     public String getEmail() { return email; }
     public void setEmail(String email) { this.email = email; }
+
+    public String getPassword() { return password; }
+    public void setPassword(String password) { this.password = password; }
 }

@@ -1,6 +1,3 @@
-// Panel: Security (src/main/java/pkg1/security)
-
-// JwtAuthenticationEntryPoint.java
 package pkg1.security;
 
 import jakarta.servlet.ServletException;
