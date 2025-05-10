@@ -1,4 +1,3 @@
-// AssignmentDTO.java
 package pkg1.dto;
 
 import jakarta.validation.constraints.Future;
@@ -20,7 +19,13 @@ public class AssignmentDTO {
     @NotNull
     private Long teacherId;
 
-    // getters & setters
+    @NotNull
+    private String course;
+
+    private String feedback;
+    private Integer score;
+
+    // Getters & Setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 
@@ -35,4 +40,13 @@ public class AssignmentDTO {
 
     public Long getTeacherId() { return teacherId; }
     public void setTeacherId(Long teacherId) { this.teacherId = teacherId; }
+
+    public String getCourse() { return course; }
+    public void setCourse(String course) { this.course = course; }
+
+    public String getFeedback() { return feedback; }
+    public void setFeedback(String feedback) { this.feedback = feedback; }
+
+    public Integer getScore() { return score; }
+    public void setScore(Integer score) { this.score = score; }
 }

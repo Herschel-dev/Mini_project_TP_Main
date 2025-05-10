@@ -29,6 +29,7 @@ public class TeacherService {
             .orElseThrow(() -> new RuntimeException("Teacher not found: " + id));  // Throw an error if not found
         return mapper.map(teacher, TeacherDTO.class);  // Convert the Teacher entity to TeacherDTO and return
     }
+    
 
     public TeacherDTO updateTeacher(TeacherDTO dto) {
         Teacher existing = teacherRepo.findById(dto.getId())

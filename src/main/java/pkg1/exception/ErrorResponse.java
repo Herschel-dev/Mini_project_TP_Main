@@ -1,4 +1,3 @@
-// ErrorResponse.java
 package pkg1.exception;
 
 import java.time.LocalDateTime;
