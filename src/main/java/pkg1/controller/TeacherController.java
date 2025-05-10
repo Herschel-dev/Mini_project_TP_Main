@@ -17,11 +17,7 @@ public class TeacherController {
         this.teacherService = teacherService;
     }
 
-    @PostMapping
-    public ResponseEntity<TeacherDTO> createTeacher(@Valid @RequestBody TeacherDTO dto) {
-        TeacherDTO created = teacherService.createTeacher(dto);
-        return ResponseEntity.ok(created);
-    }
+    
 
     @GetMapping("/{id}")
     public ResponseEntity<TeacherDTO> getTeacher(@PathVariable Long id) {
