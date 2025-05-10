@@ -25,6 +25,7 @@ public class TeacherController {
         return ResponseEntity.ok(dto);
     }
 
+    //Ignore code for put in Teacher
     @PutMapping("/{id}")
     public ResponseEntity<TeacherDTO> updateTeacher(
             @PathVariable Long id,

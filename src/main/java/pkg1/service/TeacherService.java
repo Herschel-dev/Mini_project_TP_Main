@@ -31,10 +31,15 @@ public class TeacherService {
     }
 
     public TeacherDTO updateTeacher(TeacherDTO dto) {
-        Teacher entity = mapper.map(dto, Teacher.class);  // Convert DTO to Entity
-        Teacher updated = teacherRepo.save(entity);       // Save the updated entity (creates or updates)
-        return mapper.map(updated, TeacherDTO.class);     // Convert the updated entity back to DTO and return
+        Teacher existing = teacherRepo.findById(dto.getId())
+            .orElseThrow(() -> new RuntimeException("Teacher not found: " + dto.getId()));
+
+        existing.setName(dto.getName()); // Only update the name
+
+        Teacher updated = teacherRepo.save(existing);
+        return mapper.map(updated, TeacherDTO.class);
     }
+
 
     public void deleteTeacher(Long id) {
         teacherRepo.deleteById(id);  // Deletes the teacher with the given id

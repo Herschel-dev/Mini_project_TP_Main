@@ -1,5 +1,7 @@
 package pkg1.security;
 
+//No expiration of token
+
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.security.Keys;
 import org.springframework.beans.factory.annotation.Value;
@@ -20,9 +22,9 @@ public class JwtTokenProvider {
     private int jwtExpirationMs;
 
     private SecretKey getSecretKey() {
-        // If the secret key is short, generate a new key with the required size for HS512
-        if (jwtSecret.length() < 64) {  // Ensure that it's at least 512 bits long
-            return Keys.secretKeyFor(SignatureAlgorithm.HS512); // Generates a key that is 512 bits long
+        // ✅ Ensure the key is fixed and secure
+        if (jwtSecret.length() < 64) {
+            throw new IllegalArgumentException("JWT secret must be at least 64 characters long for HS512");
         }
         return new javax.crypto.spec.SecretKeySpec(jwtSecret.getBytes(), SignatureAlgorithm.HS512.getJcaName());
     }
@@ -35,7 +37,7 @@ public class JwtTokenProvider {
                 .setSubject(userPrincipal.getUsername())
                 .setIssuedAt(new Date())
                 .setExpiration(new Date((new Date()).getTime() + jwtExpirationMs))
-                .signWith(key)
+                .signWith(key, SignatureAlgorithm.HS512)
                 .compact();
     }
 
