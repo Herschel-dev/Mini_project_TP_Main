@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #2563eb;
+  --color-secondary: #4f46e5;
+  --color-neutral: #f3f4f6;
+}
+
+.text-primary { color: var(--color-primary); }
+.bg-neutral { background-color: var(--color-neutral); }
+
+@layer components {
+  .card {
+    @apply bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300;
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-white px-4 py-2 rounded-md hover:bg-secondary transition-colors duration-300;
+  }
+}
+
+/* Custom components */
+.btn {
+  @apply px-4 py-2 rounded-md transition-colors duration-200;
+}
+
+.btn-secondary {
+  @apply bg-secondary text-white hover:bg-opacity-90;
+}
