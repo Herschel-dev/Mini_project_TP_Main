@@ -1,4 +1,3 @@
-// AttendanceDTO.java
 package pkg1.dto;
 
 import jakarta.validation.constraints.NotNull;
@@ -11,26 +10,51 @@ public class AttendanceDTO {
     private Long teacherId;
 
     @NotNull
-    private String course;
+    private String subject;  // Changed from 'course' to 'subject'
 
     @NotNull
     private LocalDate date;
 
-    private Boolean present;
+    private Boolean status;  // Changed from 'present' to 'status'
 
-    // getters & setters
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
+    // Getters and setters
+    public Long getId() {
+        return id;
+    }
 
-    public Long getTeacherId() { return teacherId; }
-    public void setTeacherId(Long teacherId) { this.teacherId = teacherId; }
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-    public String getCourse() { return course; }
-    public void setCourse(String course) { this.course = course; }
+    public Long getTeacherId() {
+        return teacherId;
+    }
 
-    public LocalDate getDate() { return date; }
-    public void setDate(LocalDate date) { this.date = date; }
+    public void setTeacherId(Long teacherId) {
+        this.teacherId = teacherId;
+    }
 
-    public Boolean getPresent() { return present; }
-    public void setPresent(Boolean present) { this.present = present; }
+    public String getSubject() {
+        return subject;
+    }
+
+    public void setSubject(String subject) {
+        this.subject = subject;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
+
+    public Boolean getStatus() {
+        return status;
+    }
+
+    public void setStatus(Boolean status) {
+        this.status = status;
+    }
 }

@@ -1,4 +1,3 @@
-// Attendance.java
 package pkg1.model;
 
 import jakarta.persistence.*;
@@ -13,13 +12,52 @@ public class Attendance {
 
     private LocalDate date;
 
-    private Boolean present;
+    private Boolean status;  // Changed from 'present' to 'status'
 
-    private String course;
+    private String subject;  // Changed from 'course' to 'subject'
 
     @ManyToOne
     @JoinColumn(name = "teacher_id")
     private Teacher teacher;
 
-    // getters and setters
+    // Getters and setters
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
+
+    public Boolean getStatus() {
+        return status;
+    }
+
+    public void setStatus(Boolean status) {
+        this.status = status;
+    }
+
+    public String getSubject() {
+        return subject;
+    }
+
+    public void setSubject(String subject) {
+        this.subject = subject;
+    }
+
+    public Teacher getTeacher() {
+        return teacher;
+    }
+
+    public void setTeacher(Teacher teacher) {
+        this.teacher = teacher;
+    }
 }

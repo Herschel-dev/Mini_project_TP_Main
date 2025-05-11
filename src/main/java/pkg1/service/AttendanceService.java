@@ -1,4 +1,3 @@
-// AttendanceService.java
 package pkg1.service;
 
 import org.modelmapper.ModelMapper;
@@ -26,8 +25,8 @@ public class AttendanceService {
         return mapper.map(saved, AttendanceDTO.class);
     }
 
-    public List<AttendanceDTO> getByCourse(String course) {
-        return attendanceRepo.findByCourse(course)
+    public List<AttendanceDTO> getBySubject(String subject) {  // Changed from 'course' to 'subject'
+        return attendanceRepo.findBySubject(subject)  // Changed from 'findByCourse' to 'findBySubject'
             .stream()
             .map(a -> mapper.map(a, AttendanceDTO.class))
             .collect(Collectors.toList());

@@ -1,4 +1,3 @@
-// AttendanceController.java
 package pkg1.controller;
 
 import org.springframework.http.ResponseEntity;
@@ -24,9 +23,9 @@ public class AttendanceController {
         return ResponseEntity.ok(saved);
     }
 
-    @GetMapping("/course/{course}")
-    public ResponseEntity<List<AttendanceDTO>> getByCourse(@PathVariable String course) {
-        List<AttendanceDTO> list = attendanceService.getByCourse(course);
+    @GetMapping("/subject/{subject}")  // Changed from '/course/{course}' to '/subject/{subject}'
+    public ResponseEntity<List<AttendanceDTO>> getBySubject(@PathVariable String subject) {  // Changed 'course' to 'subject'
+        List<AttendanceDTO> list = attendanceService.getBySubject(subject);  // Changed method name to 'getBySubject'
         return ResponseEntity.ok(list);
     }
 }

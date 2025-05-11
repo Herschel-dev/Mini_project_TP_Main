@@ -1,4 +1,3 @@
-// AttendanceRepository.java
 package pkg1.repository;
 
 import pkg1.model.Attendance;
@@ -8,5 +7,5 @@ import java.util.List;
 
 public interface AttendanceRepository extends JpaRepository<Attendance, Long> {
     List<Attendance> findByTeacherIdAndDate(Long teacherId, LocalDate date);
-    List<Attendance> findByCourse(String course);
+    List<Attendance> findBySubject(String subject);  // Changed from 'course' to 'subject'
 }
